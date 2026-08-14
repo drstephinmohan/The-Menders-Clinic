@@ -1,0 +1,6 @@
+{
+  "name": "The Menders Clinic",
+  "description": "The Menders Clinic — Dr. Stephin Mohan. Preventive Healthcare & Chronic Disease Management Specialist. Traditional Wisdom. Personalized Healing.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
