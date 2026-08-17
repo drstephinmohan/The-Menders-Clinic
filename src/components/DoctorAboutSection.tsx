@@ -14,8 +14,8 @@ export const DoctorAboutSection: React.FC<DoctorAboutSectionProps> = ({ onOpenBo
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
           
-          {/* Left Column: Doctor Image (5 Cols) */}
-          <div className="lg:col-span-5 order-2 lg:order-1">
+          {/* Left Column: Doctor Image (5 Cols) - Hidden on Mobile */}
+          <div className="hidden md:block lg:col-span-5 order-2 lg:order-1">
             <div className="relative max-w-md mx-auto lg:max-w-none">
               <DoctorImage aspectRatio="portrait" className="shadow-lg border-2 border-white" />
               <div className="hidden md:block mt-4 bg-white p-4 rounded-xl border border-[#E2DDD2] text-center shadow-xs">
