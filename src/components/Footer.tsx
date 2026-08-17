@@ -15,11 +15,15 @@ export const Footer: React.FC = () => {
           {/* Col 1: Clinic Brand & Info */}
           <div className="space-y-4">
             <div>
-              <h3 className="font-serif text-2xl font-bold text-[#F4F0E8] tracking-tight">
-                {clinicInfo.name}
-              </h3>
-              <p className="text-xs font-medium text-[#A69C8A] uppercase tracking-wider mt-1">
-                {clinicInfo.tagline}
+              <div className="h-6 sm:h-8 md:h-10 w-40 sm:w-48 md:w-56 relative flex items-center">
+                <img 
+                  src="/logo-tmc-footer.svg" 
+                  alt={clinicInfo.name} 
+                  className="absolute -left-2.5 sm:-left-3.5 md:-left-4.5 top-1/2 -translate-y-[45%] sm:-translate-y-[50%] h-28 sm:h-32 md:h-36 w-auto object-contain max-w-none pointer-events-none"
+                />
+              </div>
+              <p className="text-[7px] sm:text-[8px] md:text-[8.5px] font-medium text-[#A69C8A] uppercase tracking-[0.1em] mt-1 sm:mt-1.5 relative z-10 pl-[1px] leading-[1.3]">
+                Traditional Wisdom <br /> Personalized Healing
               </p>
             </div>
             

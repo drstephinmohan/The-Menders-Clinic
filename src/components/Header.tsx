@@ -55,12 +55,16 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Brand / Logo */}
-          <Link to="/" className="flex flex-col group">
-            <span className="font-serif text-2xl sm:text-2xl md:text-3xl font-bold tracking-tight text-[#1E3A2F] group-hover:text-[#2A5243] transition-colors">
-              {clinicInfo.name}
-            </span>
-            <span className="text-[10px] sm:text-xs tracking-wider uppercase text-[#736858] font-medium -mt-0.5">
-              Traditional Wisdom • Personalized Healing
+          <Link to="/" className="flex flex-col group items-start relative pb-0.5">
+            <div className="h-6 sm:h-8 md:h-10 w-40 sm:w-48 md:w-56 relative flex items-center">
+              <img 
+                src="/logo-tmc.png" 
+                alt={clinicInfo.name} 
+                className="absolute -left-2.5 sm:-left-3.5 md:-left-4.5 top-1/2 -translate-y-[45%] sm:-translate-y-[50%] h-28 sm:h-32 md:h-36 w-auto object-contain transition-opacity group-hover:opacity-90 max-w-none pointer-events-none"
+              />
+            </div>
+            <span className="text-[7px] sm:text-[8px] md:text-[8.5px] tracking-[0.1em] uppercase text-[#736858] font-medium mt-1 sm:mt-1.5 relative z-10 pl-[1px] leading-[1.3]">
+              Traditional Wisdom <br /> Personalized Healing
             </span>
           </Link>
 

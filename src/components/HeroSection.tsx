@@ -9,7 +9,7 @@ interface HeroSectionProps {
 
 export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-[#FAF8F5] via-[#F4F0E8] to-[#FAF8F5] py-12 md:py-20 lg:py-24 border-b border-[#E2DDD2]">
+    <section className="relative overflow-hidden bg-gradient-to-b from-[#FAF8F5] via-[#F4F0E8] to-[#FAF8F5] pt-6 pb-12 md:pt-10 md:pb-20 lg:pt-12 lg:pb-24 border-b border-[#E2DDD2]">
       {/* Delicate background ambient pattern */}
       <div className="absolute inset-0 bg-[radial-gradient(#2E4A3E_1px,transparent_1px)] [background-size:24px_24px] opacity-[0.03] pointer-events-none" />
 
@@ -106,7 +106,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
 
           {/* Right Column: Doctor Portrait Composition (5 Cols) */}
           <div className="lg:col-span-5 flex justify-center">
-            <div className="relative w-full max-w-md lg:max-w-none">
+            <div className="relative w-full max-w-xs sm:max-w-sm lg:max-w-[340px]">
               
               {/* Background Glow Frame */}
               <div className="absolute -inset-2 rounded-3xl bg-gradient-to-tr from-[#2E4A3E]/20 via-[#C49A45]/20 to-transparent blur-lg opacity-70 pointer-events-none" />
