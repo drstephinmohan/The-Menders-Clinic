@@ -17,16 +17,16 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
           
           {/* Left Column: Text & Content (7 Cols) */}
-          <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
+          <div className="lg:col-span-7 flex flex-col gap-6 text-center lg:text-left order-2 lg:order-1">
             
             {/* Top Pill Tag */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#1E3A2F]/10 border border-[#1E3A2F]/20 text-[#1E3A2F] text-xs font-semibold tracking-wide">
+            <div className="hidden md:inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#1E3A2F]/10 border border-[#1E3A2F]/20 text-[#1E3A2F] text-xs font-semibold tracking-wide">
               <Sparkles className="w-3.5 h-3.5 text-[#C49A45]" />
               <span>Marthandam, Tamil Nadu • Clinical Excellence</span>
             </div>
 
             {/* Doctor Name & Specialization */}
-            <div className="space-y-2">
+            <div className="hidden md:block space-y-2">
               <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-[#1E2522] leading-[1.12]">
                 Dr. Stephin Mohan
               </h1>
@@ -36,19 +36,19 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
             </div>
 
             {/* Main Tagline */}
-            <div className="py-2 border-y border-[#E2DDD2]/80 max-w-xl mx-auto lg:mx-0">
+            <div className="py-2 border-y border-[#E2DDD2]/80 max-w-xl mx-auto lg:mx-0 order-2 md:order-none">
               <blockquote className="font-serif text-xl sm:text-2xl font-semibold italic text-[#1E3A2F] tracking-wide">
                 “{clinicInfo.tagline}”
               </blockquote>
             </div>
 
             {/* Supporting Introduction */}
-            <p className="text-sm sm:text-base text-[#4A524D] leading-relaxed max-w-2xl mx-auto lg:mx-0">
+            <p className="text-sm sm:text-base text-[#4A524D] leading-relaxed max-w-2xl mx-auto lg:mx-0 order-3 md:order-none">
               Welcome to <span className="font-semibold text-[#1E2522]">The Menders Clinic</span>. We specialize in root-cause preventive healthcare, personalized chronic disease management, and authentic traditional therapeutic protocols tailored precisely to your unique health needs.
             </p>
 
             {/* Key Trust Highlights Pills */}
-            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 pt-1 text-xs text-[#3E4742]">
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 pt-1 text-xs text-[#3E4742] order-4 md:order-none">
               <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/80 border border-[#E2DDD2]">
                 <Shield className="w-4 h-4 text-[#2E4A3E]" />
                 <span>Personalized Consultation</span>
@@ -64,7 +64,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
             </div>
 
             {/* CTA Action Buttons */}
-            <div className="pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3">
+            <div className="pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 order-1 md:order-none">
               <button
                 onClick={() => onOpenBooking()}
                 className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-[#1E3A2F] text-white font-medium text-sm sm:text-base hover:bg-[#2A4B3E] transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2 group active:scale-95"
@@ -82,7 +82,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
             </div>
 
             {/* Direct Instant Contact Bar */}
-            <div className="pt-2 flex items-center justify-center lg:justify-start gap-4 text-xs text-[#5C6660]">
+            <div className="pt-2 hidden md:flex items-center justify-center lg:justify-start gap-4 text-xs text-[#5C6660]">
               <a
                 href={clinicInfo.whatsapp.link}
                 target="_blank"
@@ -105,7 +105,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
           </div>
 
           {/* Right Column: Doctor Portrait Composition (5 Cols) */}
-          <div className="lg:col-span-5 flex justify-center">
+          <div className="lg:col-span-5 flex justify-center order-1 lg:order-2">
             <div className="relative w-full max-w-xs sm:max-w-sm lg:max-w-[340px]">
               
               {/* Background Glow Frame */}

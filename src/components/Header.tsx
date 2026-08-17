@@ -60,7 +60,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
               <img 
                 src="/logo-tmc.png" 
                 alt={clinicInfo.name} 
-                className="absolute -left-2.5 sm:-left-3.5 md:-left-4.5 top-1/2 -translate-y-[45%] sm:-translate-y-[50%] h-28 sm:h-32 md:h-36 w-auto object-contain transition-opacity group-hover:opacity-90 max-w-none pointer-events-none"
+                className="absolute -left-2.5 sm:-left-3.5 md:-left-4.5 top-1/2 -translate-y-[42%] sm:-translate-y-[50%] h-[120px] sm:h-32 md:h-36 w-auto object-contain transition-opacity group-hover:opacity-90 max-w-none pointer-events-none"
               />
             </div>
             <span className="text-[7px] sm:text-[8px] md:text-[8.5px] tracking-[0.1em] uppercase text-[#736858] font-medium mt-1 sm:mt-1.5 relative z-10 pl-[1px] leading-[1.3]">

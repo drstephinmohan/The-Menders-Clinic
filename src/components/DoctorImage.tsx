@@ -50,9 +50,10 @@ export const DoctorImage: React.FC<DoctorImageProps> = ({
             </div>
           </div>
 
-          <div className="text-center z-10 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-xl border border-[#E2DDD2] w-full">
+          <div className="text-center z-10 bg-white/80 backdrop-blur-sm px-5 py-3 rounded-xl border border-[#E2DDD2] w-full">
             <h4 className="font-serif text-lg font-bold text-[#1E3A2F]">Dr. Stephin Mohan</h4>
-            <p className="text-xs text-[#5C6660]">Preventive Healthcare Specialist</p>
+            <p className="hidden md:block text-xs text-[#5C6660]">Preventive Healthcare Specialist</p>
+            <p className="md:hidden text-[11px] text-[#5C6660] leading-snug">Preventive Healthcare &amp; Chronic Disease Management Specialist</p>
           </div>
         </div>
       )}

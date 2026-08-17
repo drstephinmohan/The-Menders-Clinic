@@ -19,10 +19,10 @@ export const Footer: React.FC = () => {
                 <img 
                   src="/logo-tmc-footer.svg" 
                   alt={clinicInfo.name} 
-                  className="absolute -left-2.5 sm:-left-3.5 md:-left-4.5 top-1/2 -translate-y-[45%] sm:-translate-y-[50%] h-28 sm:h-32 md:h-36 w-auto object-contain max-w-none pointer-events-none"
+                  className="absolute -left-2.5 sm:-left-3.5 md:-left-4.5 top-1/2 -translate-y-[42%] sm:-translate-y-[50%] h-[120px] sm:h-32 md:h-36 w-auto object-contain max-w-none pointer-events-none"
                 />
               </div>
-              <p className="text-[7px] sm:text-[8px] md:text-[8.5px] font-medium text-[#A69C8A] uppercase tracking-[0.1em] mt-1 sm:mt-1.5 relative z-10 pl-[1px] leading-[1.3]">
+              <p className="hidden sm:block text-[7px] sm:text-[8px] md:text-[8.5px] font-medium text-[#A69C8A] uppercase tracking-[0.1em] mt-1 sm:mt-1.5 relative z-10 pl-[1px] leading-[1.3]">
                 Traditional Wisdom <br /> Personalized Healing
               </p>
             </div>
