@@ -19,7 +19,7 @@ export const Footer: React.FC = () => {
                 <img 
                   src="/logo-tmc-footer.svg" 
                   alt={clinicInfo.name} 
-                  className="absolute -left-2.5 sm:-left-3.5 md:-left-4.5 top-1/2 -translate-y-[42%] sm:-translate-y-[50%] h-[120px] sm:h-32 md:h-36 w-auto object-contain max-w-none pointer-events-none"
+                  className="absolute -left-2.5 sm:-left-3.5 md:-left-4.5 top-1/2 -translate-y-[42%] sm:-translate-y-[50%] -mt-[3px] sm:mt-0 -ml-[2.5px] sm:ml-0 h-[120px] sm:h-32 md:h-36 w-auto object-contain max-w-none pointer-events-none"
                 />
               </div>
               <p className="hidden sm:block text-[7px] sm:text-[8px] md:text-[8.5px] font-medium text-[#A69C8A] uppercase tracking-[0.1em] mt-1 sm:mt-1.5 relative z-10 pl-[1px] leading-[1.3]">
