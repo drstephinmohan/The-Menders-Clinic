@@ -18,7 +18,7 @@ export const DoctorAboutSection: React.FC<DoctorAboutSectionProps> = ({ onOpenBo
           <div className="lg:col-span-5 order-2 lg:order-1">
             <div className="relative max-w-md mx-auto lg:max-w-none">
               <DoctorImage aspectRatio="portrait" className="shadow-lg border-2 border-white" />
-              <div className="mt-4 bg-white p-4 rounded-xl border border-[#E2DDD2] text-center shadow-xs">
+              <div className="hidden md:block mt-4 bg-white p-4 rounded-xl border border-[#E2DDD2] text-center shadow-xs">
                 <h4 className="font-serif text-xl font-bold text-[#1E3A2F]">{clinicInfo.doctorName}</h4>
                 <p className="text-xs text-[#5C6660] mt-0.5">{clinicInfo.specialization}</p>
                 <div className="mt-2 text-[11px] font-semibold text-[#8C7E6A] uppercase tracking-wider">
