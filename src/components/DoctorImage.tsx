@@ -2,13 +2,15 @@ import React, { useState } from 'react';
 
 interface DoctorImageProps {
   className?: string;
-  aspectRatio?: 'square' | 'portrait' | 'wide';
+  aspectRatio?: 'square' | 'portrait' | 'wide' | 'auto';
+  variant?: 'hero' | 'about';
   priority?: boolean;
 }
 
 export const DoctorImage: React.FC<DoctorImageProps> = ({
   className = '',
   aspectRatio = 'square',
+  variant = 'hero',
 }) => {
   const [imageError, setImageError] = useState(false);
 
@@ -18,6 +20,8 @@ export const DoctorImage: React.FC<DoctorImageProps> = ({
       ? 'aspect-[3/4]'
       : aspectRatio === 'wide'
       ? 'aspect-[16/10]'
+      : aspectRatio === 'auto'
+      ? 'aspect-auto'
       : 'aspect-square';
 
   return (
@@ -51,9 +55,22 @@ export const DoctorImage: React.FC<DoctorImageProps> = ({
           </div>
 
           <div className="text-center z-10 bg-white/80 backdrop-blur-sm px-5 py-3 rounded-xl border border-[#E2DDD2] w-full">
-            <h4 className="font-serif text-lg font-bold text-[#1E3A2F]">Dr. Stephin Mohan</h4>
-            <p className="hidden md:block text-xs text-[#5C6660]">Preventive Healthcare Specialist</p>
-            <p className="md:hidden text-[11px] text-[#5C6660] leading-snug">Preventive Healthcare &amp; Chronic Disease Management Specialist</p>
+            {variant === 'about' ? (
+              <>
+                <h4 className="font-serif text-sm sm:text-[15px] md:text-base font-bold text-[#1E3A2F] leading-snug">
+                  Preventive Healthcare & Chronic Disease<br className="hidden sm:block" /> Management Specialist
+                </h4>
+                <p className="text-[9px] sm:text-[10px] md:text-[11px] font-semibold text-[#8C7E6A] uppercase tracking-wider mt-1.5">
+                  THE MENDERS CLINIC • MARTHANDAM
+                </p>
+              </>
+            ) : (
+              <>
+                <h4 className="font-serif text-lg font-bold text-[#1E3A2F]">Dr. Stephin Mohan</h4>
+                <p className="hidden md:block text-xs text-[#5C6660]">Preventive Healthcare Specialist</p>
+                <p className="md:hidden text-[11px] text-[#5C6660] leading-snug">Preventive Healthcare &amp; Chronic Disease Management Specialist</p>
+              </>
+            )}
           </div>
         </div>
       )}
