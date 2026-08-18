@@ -55,7 +55,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Brand / Logo */}
-          <Link to="/" onClick={() => { if (window.innerWidth < 768) { window.scrollTo({ top: 0, behavior: 'smooth' }); } }} className="flex flex-col group items-start relative pb-0.5">
+          <Link to="/" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="flex flex-col group items-start relative pb-0.5">
             <div className="h-6 sm:h-8 md:h-10 w-40 sm:w-48 md:w-56 relative flex items-center">
               <img 
                 src="/logo-tmc.png" 
