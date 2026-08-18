@@ -19,12 +19,36 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({
   const [preferredTime, setPreferredTime] = useState('Morning (9 AM - 1 PM)');
   const [notes, setNotes] = useState('');
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState(false);
 
   if (!isOpen) return null;
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSubmitted(true);
+    setIsSubmitting(true);
+    setSubmitError(false);
+
+    const formData = new FormData(e.currentTarget);
+    formData.append('subject', `New Consultation Request: ${service}`);
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData
+      });
+      const data = await response.json();
+      
+      if (data.success) {
+        setSubmitted(true);
+      } else {
+        setSubmitError(true);
+      }
+    } catch (err) {
+      setSubmitError(true);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleWhatsAppDirect = () => {
@@ -97,11 +121,21 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-4">
+              <input type="hidden" name="access_key" value="e8257bf4-0bfb-48a7-a5ab-048f267b7f8f" />
+              <input type="hidden" name="Originating CTA" value={defaultService} />
+              
+              {submitError && (
+                <div className="bg-red-50 text-red-600 p-3 rounded-xl text-sm border border-red-100 text-center">
+                  Something went wrong. Please try again or contact us directly via WhatsApp.
+                </div>
+              )}
+
               <div>
                 <label className="block text-xs font-semibold text-[#4A524D] uppercase tracking-wider mb-1.5">
                   Area of Care / Service
                 </label>
                 <select
+                  name="Area of Care"
                   value={service}
                   onChange={(e) => setService(e.target.value)}
                   className="w-full px-3.5 py-2.5 rounded-xl border border-[#D8D2C6] bg-white text-sm text-[#1E2522] focus:outline-none focus:ring-2 focus:ring-[#2E4A3E]/30"
@@ -125,6 +159,7 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({
                     <User className="w-4 h-4 absolute left-3 top-3 text-[#8A948E]" />
                     <input
                       type="text"
+                      name="name"
                       required
                       placeholder="e.g. Ananth Kumar"
                       value={name}
@@ -142,6 +177,7 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({
                     <Phone className="w-4 h-4 absolute left-3 top-3 text-[#8A948E]" />
                     <input
                       type="tel"
+                      name="phone"
                       required
                       placeholder="+91 98765 43210"
                       value={phone}
@@ -157,6 +193,7 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({
                   Preferred Time Window
                 </label>
                 <select
+                  name="Preferred Time Window"
                   value={preferredTime}
                   onChange={(e) => setPreferredTime(e.target.value)}
                   className="w-full px-3.5 py-2.5 rounded-xl border border-[#D8D2C6] bg-white text-sm text-[#1E2522] focus:outline-none focus:ring-2 focus:ring-[#2E4A3E]/30"
@@ -172,6 +209,7 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({
                   Brief Note / Health Concern (Optional)
                 </label>
                 <textarea
+                  name="message"
                   rows={2}
                   placeholder="Mention any specific concern or duration of symptoms..."
                   value={notes}
@@ -184,9 +222,10 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({
               <div className="pt-3 space-y-2">
                 <button
                   type="submit"
-                  className="w-full py-3 px-4 rounded-xl bg-[#1E3A2F] text-white font-medium text-sm hover:bg-[#2A4B3E] transition-colors shadow-sm flex items-center justify-center gap-2"
+                  disabled={isSubmitting}
+                  className="w-full py-3 px-4 rounded-xl bg-[#1E3A2F] text-white font-medium text-sm hover:bg-[#2A4B3E] transition-colors shadow-sm flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
                 >
-                  Request Appointment
+                  {isSubmitting ? 'Sending Request...' : 'Request Appointment'}
                 </button>
 
                 <div className="relative flex py-1 items-center">
