@@ -156,18 +156,15 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({
                 <label className="block text-xs font-semibold text-[#4A524D] uppercase tracking-wider mb-1.5">
                   Preferred Time Window
                 </label>
-                <div className="relative">
-                  <Calendar className="w-4 h-4 absolute left-3 top-3 text-[#8A948E]" />
-                  <select
-                    value={preferredTime}
-                    onChange={(e) => setPreferredTime(e.target.value)}
-                    className="w-full pl-9 pr-3.5 py-2.5 rounded-xl border border-[#D8D2C6] bg-white text-sm text-[#1E2522] focus:outline-none focus:ring-2 focus:ring-[#2E4A3E]/30"
-                  >
-                    <option value="Morning (9 AM - 1 PM)">Morning Session (9:00 AM – 1:00 PM)</option>
-                    <option value="Evening (4:30 PM - 8:30 PM)">Evening Session (4:30 PM – 8:30 PM)</option>
-                    <option value="Weekend Appointment">Weekend / Prior Appointment Request</option>
-                  </select>
-                </div>
+                <select
+                  value={preferredTime}
+                  onChange={(e) => setPreferredTime(e.target.value)}
+                  className="w-full px-3.5 py-2.5 rounded-xl border border-[#D8D2C6] bg-white text-sm text-[#1E2522] focus:outline-none focus:ring-2 focus:ring-[#2E4A3E]/30"
+                >
+                  <option value="Morning (9 AM - 1 PM)">Morning Session (9:00 AM – 1:00 PM)</option>
+                  <option value="Evening (4:30 PM - 8:30 PM)">Evening Session (4:30 PM – 8:30 PM)</option>
+                  <option value="Weekend Appointment">Weekend / Prior Appointment Request</option>
+                </select>
               </div>
 
               <div>
